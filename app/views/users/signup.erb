@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SIGNUP:</title>
+</head>
+<p><%= @error %></p>
+<form action="/signup" method="post" enctype="multipart/form-data">
+    <label for="username"></label>
+    <b>Username</b>
+    <input type="text" name="username" placeholder="User Name" id="username">
+    <br><br>
+    <label for="file"><b>Username</label>
+    <b>Please upload your profile picture</b>
+    <input type='file' name='file' class='form-control'>
+    <br><br>
+    <label for="email"></label>
+    <b>Email</b>
+    <input type="text" name="email" placeholder="Email" id="email">
+    <br><br>
+    <label for="password"></label>
+    <b>Password</b>
+    <input type="password" name="password" placeholder="Password" id="password">
+    <br><br>
+    <label for="age"></label>
+    <b>Age</b>
+    <input type="number" name="age" placeholder="Age" id="age">
+    <br><br>
+    <button type="submit" class="btn">Sign Up</button>
+</form>
+</html>
+
+
+
+
+
+
+
+
+

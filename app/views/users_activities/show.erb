@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>activity</title>
+<h1> Hi <%= current_user.username %>!</h1>
+</head>
+<body>
+<form>
+    <h2> Woohoo, you have activity match!<h2>
+    <h2> <%= @u_activity.city %> ---> "<%= @u_activity.activity.title %>" ---> <%= @u_activity.date %>.</h2> 
+    <img src='<%= @u_activity.activity.image %>' atl='image'><br>
+    <h3>Do not hesitate to contact them and go together ;-)</h3><br><br>
+    <h2> Who will be the lucky one? </h2>   
+        <% @join_activities.each do |ja| %> <br>
+            <p> - <%= ja.user.username%>. Age: <%= ja.user.age%> - </p2> <a href='/messages/new'> Send a message </a>
+        <% end %>
+        <br><br><br>
+        <a href='/users_activities'> SHOW ME FULL LIST OF MY ACTIVITIES => </a> <br>
+</form>
+</body>
+</html>

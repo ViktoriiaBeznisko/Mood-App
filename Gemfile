@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'sinatra'
+gem 'sinatra', '~> 2.0', '>= 2.0.8.1'
 gem 'activerecord', '~> 4.2', '>= 4.2.6', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
@@ -9,8 +9,12 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
-gem 'bcrypt'
+gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'tux'
+gem 'city-state', '~> 0.0.13'
+gem 'carrierwave'
+
+
 
 group :test do
   gem 'rspec'

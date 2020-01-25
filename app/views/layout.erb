@@ -14,8 +14,16 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <% if logged_in? %>
+      <div><a href="./messages">Messages</a></div>   
+      <div><a href="./logout">Log Out</a></div>  
+    <% else %>
+      <div><a href="./signup">Sign Up</a></div>
+      <div><a href="./login">Log In</a></div>   
+    <% end %>
+      <div><a href="./">Home</a></div>  
 
+    <div class="wrapper">
         <%= yield %>
 
       <footer class="branding">

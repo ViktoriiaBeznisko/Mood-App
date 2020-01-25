@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>ACTIVITIES</title>
+<h1>CREATE YOUR NEW ACTIVITY:</h1>
+</head>
+
+<body>
+<p><%= @error %></p>
+<form action='/users_activities/new' method='post'>
+
+<label for='state'></label>
+    <h2>Find your city:</h2>
+    <select id='city' name="city">  
+        <% @list_of_cities.each do |city| %>
+        <option value="<%=city %>"><%= city %></option> 
+        <% end %>
+    </select>   
+
+<label for='date'></label>
+    <h2>Enter the day you want to go:</h2>
+    <input type='date' id='date' name='date' required pattern='\d{4}-\d{2}-\d{2}' min= '2020-01-12' required> 
+    <span class='validity'></span>
+
+<label for='activity'></label>
+<h2> Select activity you want to schedule for upcoming week:</h2>
+    <% @activities.each do |activity| %>
+        <input type='radio' id='activity' name='activity_id' value='<%= activity.id %>'>
+        <img src='<%= activity.image %>' atl='image'><br>
+        <%= activity.title %></input><br></br>
+    <% end %><br>
+
+<button type='submit' class='btn'>Submit</button>
+</form>
+</body>
+</html>

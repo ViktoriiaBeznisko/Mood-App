@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Edit activity</title>
+<h1> Hi <%= current_user.username %>! </h1>
+<h2> Here you can edit your plans: '<%= @my_activity.activity.title %>'</h2>
+<p><%= @error %></p>
+</head>
+<body>
+<form action='/users_activities/<%= @my_activity.id %>' method='post'>
+<input type='hidden' name='_method' value='patch'>
+<img src='<%= @my_activity.activity.image %>' atl='image'><br></br> 
+<label for='date'> </label>
+    <h3> You planed to go <%= @my_activity.date %>. Please change the day here:</h3>
+<input type='date' name='users_activity[date]' required pattern='\d{4}-\d{2}-\d{2}' min= '2020-01-12' required> 
+    <span class='validity'></span><br>
+<label for='state'></label>
+    <h3> You planed to go to <%= @my_activity.city %>. Please choose another city here:</h3>
+    <select id='city' name='users_activity[city]'>  
+        <% @list_of_cities.each do |city| %>
+            <option value='<%=city %>'><%= city %></option> 
+        <% end %>
+    </select>  
+<br><br>
+    <button type='submit' class='btn'>Make changes</button><br><br><br>
+    <a href='/users_activities'> COME BACK TO MY ACTIVITIES => </a> 
+</form>
+<form action='/users_activities/<%= @my_activity.id %>' method='POST'>
+    <input type='hidden' name='_method' value='DELETE'/>
+    <button class="btn btn-danger" type="submit">Delete</button>
+</form>
+
+</body>
+</html>
+
+
+
+
+    

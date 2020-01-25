@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>LOGIN:</title>
+</head>
+<p><%= @error %></p>
+<form action='/login' method='post'>
+    <label for='username'><b>Username</b></label>
+    <input type='text' name='username' placeholder='User Name' id='username'>
+
+    <label for='password'><b>Password</b></label>
+    <input type='password' name='password' placeholder='Password' id='password'>
+
+    <button type='submit' class='btn'>Login</button>
+</form>
+</html>

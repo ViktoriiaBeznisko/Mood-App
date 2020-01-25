@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>my messages</title>
+    <h1> Hi <%= current_user.username %>! </h1>
+    <h2>Here are all your messages:</h2>
+  </head>
+  <body>
+    <% @received.each do |m| %>
+      <p> Message was received from: <%= m.sender %></p>
+      <p> At: <%= m.created_at %></p>
+      <p> Message: <%= m.text%></p>
+      <a href='/messages/new'> Reply!</a>
+    <% end %> <br><br><br>
+
+    <% @sent.each do |m| %>
+      <p> Message sent to: <%= m.recipient %></p> 
+      <p> At: <%= m.created_at %></p>
+      <p> Message: <%= m.text%></p> 
+      <a href='/messages/new'> Send another one!</a><br><br><br>
+    <% end %> 
+    <a href='/users_activities'> COME BACK TO MY ACTIVITIES => </a> 
+  </body>
+</html>

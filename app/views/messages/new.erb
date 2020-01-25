@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>new messages</title>
+    <h1> Hi <%= current_user.username %>! </h1>
+    <h2>Welcome to your messenger.</h2>
+  </head>
+  <body>
+    <%= @error %>
+    <form action='/messages/new' method='post'>
+    <input type="hidden" id="sender_id" name="sender_id" value="<%= current_user.id %>">
+
+    <h3>Please select person you want to text:</h3>
+      <% @users.each do |u| %>
+        <input type='radio' id='recipient_id' name='recipient_id' value='<%= u.id %>'>
+        <%= u.username %>
+      <% end %><br><br>
+
+    <h3>Please type your text here:</h3>
+    <textarea name="text" value="<%= @new_message.text %>"></textarea><br>
+
+  <button type='submit' class='btn'>SEND</button><br><br><br>
+  <a href='/users_activities'> COME BACK TO MY ACTIVITIES => </a><br>
+  </form>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>users activities</title>
+<h1> Hi <%= current_user.username %>! Here are all your activities:</h1>
+</head>
+<body>
+    <% @list_of_activities.each do |activ| %><br>
+        <h2> Plan: <%= activ.activity.title%></h2>
+        <img src='<%= activ.activity.image %>' atl='image'><br>
+        <p> CITY - <%= activ.city%>!  DATE: <%= activ.date%> ;-)</p> 
+        <a href='/join_activities/<%= activ.id %>'> FIND FRIENDS TO GO !</a><br>   
+        <a href='/users_activities/<%= activ.id %>/edit'>Edit</a>
+    <% end %><br><br><br>
+    <a href='/users_activities/new'> CREATE NEW ACTIVITY ==> </a> <br>
+</body>
+</html>
+
+
+
+
+
+ 
