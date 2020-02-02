@@ -1,1 +1,1 @@
-
+This is an application for dating based on the interests. Users will be able to match each other based on interests in particular activities, such as tennis, billiards or as simple as spending time in a park.
