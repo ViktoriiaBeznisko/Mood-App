@@ -12,7 +12,7 @@ gem 'pry'
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'tux'
 gem 'city-state', '~> 0.0.13'
-gem 'carrierwave'
+gem 'carrierwav
 
 
 
